@@ -1,0 +1,215 @@
+a = 'single quotes are valid'
+
+b = "double quotes are valid"
+
+# There are two more types
+
+c = '''triple
+         single quotes
+                    are
+also valid.        ''' # THESE ARE SPECIAL -> DOCSTRINGS
+
+c
+
+type(c)
+
+# Docstrings can retain whitespaces -> Multi Line Strings
+d = """triple double quotes
+
+
+          are also valid"""
+
+d
+
+ord("a") # Returns the mapped (ASCII) value of the given character
+
+ord("%")
+
+chr(37) # Returns the character corresponding to a given ASCII value
+
+chr(23123)
+
+# STRING FORMATTING
+l = 5
+b = 10
+a = l * b
+
+print("The article has a length of", l, ", a breadth of", b, "and an area of", a, ".")
+
+print("The article has a length of {}, breadth of {} and an area of {}.".format(l, b, a))
+
+# Formattable Strings
+print(f"The article has a length of {l}, breadth of {b} and an area of {a}.")
+
+first_name = "Bipin"
+last_name = "Kalra"
+
+full_name = first_name + last_name # Strings get concatenated when they are added
+
+full_name
+
+full_name = first_name + " " + last_name
+
+full_name
+
+full_name = f"{first_name} {last_name}"
+
+full_name
+
+print("-" * 50)
+
+"Python" * 5 # concatenates the string 5 times with itself
+
+# Lexicographical Comparison -> Dictionary Order
+
+"zoo" > "supercaligragilisticexpialidocious"
+
+"A" > "a" # Two different cases being compared
+
+# "A" has an ASCII value of 65
+# "a" has an ASCII value of 97
+# 97 > 65 and thus "a" > "A"
+
+# Comparison will happen between ASCII representations
+# Moves to the second character only if the first character is the same
+
+a = "PYTHON IS COOL"
+
+# INDEXING AND SLICING WORK ON STRINGS
+a[5] # Indexing starts at 0 -> This prints the 6th character which resides at index 5
+
+a[-2]
+
+len(a)
+
+a[3:8] # start is included and end is excluded
+
+a[::2]
+
+a[::-1] # Changes the default values according to negative step size
+
+for i in a:
+  print(i)
+
+for i in range(len(a)):
+  print(f"{i} -> {a[i]}")
+
+# SPLIT
+
+a = "this is a string which contains multiple words"
+
+a.split(" ") # delimiter is provided as argument
+
+b = "Bipin Kalra,5000,Male,Indian,6ft" # CSV -> Comma Separated Variables
+
+b.split(",")
+
+c = "45_56_78_90_34_2".split("_")
+
+c
+
+"1RANDOM2RANDOM3RANDOM4RANDOM5".split("RANDOM")
+
+l = ['Bipin Kalra', '5000', 'Male', 'Indian', '6ft']
+
+# JOIN
+# "delimiter".join(list_of_strings)
+
+" ".join(l)
+
+",".join(l)
+
+"<!WOW!>".join(l)
+
+# FIND
+# Find can be used to find a substring within a string
+
+a = "this is a string which contains multiple words which is cool!"
+
+a.find("is a string") # if the substring is found, it will provide the starting index
+
+a.find("is") # return the starting index of the first occurence
+
+a.find("RANDOM") # if the substring is not present, it returns -1
+
+# REPLACE
+# Looks for a given substring and replaces it with another
+
+a = "This is a random string which randomly uses the word RANDOM a very random number of times!"
+
+a.replace("random", "superb") # string.replace("substring", "replacement_substring")
+
+a
+# Replace creates a copy of the original string with the replacements but the original string is not modified!
+
+# COUNT
+# Counts the number of times a given substring occurs in a string
+
+a
+
+a.count("random")
+
+a.count("NOT PRESENT")
+
+ord(" ")
+
+# Check whether a string is a palindrome
+
+"NAMAN"
+
+def check_palindrome(s):
+  if s == s[::-1]:
+    return True
+  else:
+    return False
+
+check_palindrome("NITIN")
+
+check_palindrome("PYTHON")
+
+check_palindrome("Nitin")
+
+def check_palindrome(s):
+  s = s.lower() # converts the entire string into lower case
+
+  if s == s[::-1]:
+    return True
+  else:
+    return False
+
+check_palindrome("NaMAn")
+
+def check_palindrome(s):
+  return True if s.lower() == s.lower()[::-1] else False
+
+check_palindrome("NaMAn")
+
+check_palindrome = lambda s: True if s.lower() == s.lower()[::-1] else False
+
+check_palindrome("NaMAn")
+
+a = input()
+
+a
+
+a = a.split(" ")
+
+a
+
+final_a = []
+
+for i in a:
+  final_a.append(int(i))
+
+final_a
+
+user_input = input()
+user_input = user_input.split(" ")
+
+final_user_input = []
+
+for i in user_input:
+  final_user_input.append(int(i))
+
+print(final_user_input)
+
